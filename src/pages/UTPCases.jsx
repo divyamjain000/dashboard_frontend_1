@@ -20,7 +20,7 @@ const UTPCases = () => {
         selectionSettings={selectionsettings}
         toolbar={toolbarOptions}
         editSettings={editing}
-        allowSorting
+        // allowSorting
       >
         <ColumnsDirective>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}

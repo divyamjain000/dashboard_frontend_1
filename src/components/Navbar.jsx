@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { BsChatLeft } from "react-icons/bs";
-import { RiNotification3Line } from "react-icons/ri";
+import React, { useEffect } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
+// import { BsChatLeft } from 'react-icons/bs';
+// import { RiNotification3Line } from 'react-icons/ri';
 // import { MdKeyboardArrowDown } from 'react-icons/md';
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 // import avatar from '../data/avatar.jpg';
-import { Chat, Notification, UserProfile } from ".";
-import { useStateContext } from "../contexts/ContextProvider";
-import Login from "./Login";
-import { Link } from "react-router-dom";
+// import { Chat, Notification, UserProfile } from '.';
+import { Link } from 'react-router-dom';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -33,8 +32,8 @@ const Navbar = () => {
     currentColor,
     activeMenu,
     setActiveMenu,
-    handleClick,
-    isClicked,
+    // handleClick,
+    // isClicked,
     setScreenSize,
     screenSize,
   } = useStateContext();
@@ -42,11 +41,11 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     handleResize();
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -95,8 +94,8 @@ const Navbar = () => {
           </Link>
         </TooltipComponent>
 
-        {isClicked.chat && <Chat />}
-        {isClicked.notification && <Notification />}
+        {/* {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />} */}
       </div>
     </div>
   );

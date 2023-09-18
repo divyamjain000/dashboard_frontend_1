@@ -1,11 +1,10 @@
 import React from 'react';
-import { AiOutlineCalendar } from 'react-icons/ai';
-import { FiShoppingBag, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { AiOutlineCalendar, AiOutlineHome, AiOutlineFileSearch } from 'react-icons/ai';
+import { FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
-import { HiOutlineRefresh } from 'react-icons/hi';
+// import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GrLocation } from 'react-icons/gr';
 import avatar from './avatar.jpg';
@@ -394,27 +393,27 @@ export const customersGrid = [
     width: '150',
     template: customerGridImage,
     textAlign: 'Center' },
-  { field: 'ProjectName',
-    headerText: 'Project Name',
-    width: '150',
-    textAlign: 'Center' },
+  // { field: 'ProjectName',
+  //   headerText: 'Project Name',
+  //   width: '150',
+  //   textAlign: 'Center' },
   { field: 'Status',
     headerText: 'Status',
     width: '130',
     format: 'yMd',
     textAlign: 'Center',
     template: customerGridStatus },
-  {
-    field: 'Weeks',
-    headerText: 'Weeks',
-    width: '100',
-    format: 'C2',
-    textAlign: 'Center' },
-  { field: 'Budget',
-    headerText: 'Budget',
-    width: '100',
-    format: 'yMd',
-    textAlign: 'Center' },
+  // {
+  //   field: 'Weeks',
+  //   headerText: 'Weeks',
+  //   width: '100',
+  //   format: 'C2',
+  //   textAlign: 'Center' },
+  // { field: 'Budget',
+  //   headerText: 'Budget',
+  //   width: '100',
+  //   format: 'yMd',
+  //   textAlign: 'Center' },
 
   { field: 'Location',
     headerText: 'Location',
@@ -422,7 +421,7 @@ export const customersGrid = [
     textAlign: 'Center' },
 
   { field: 'CustomerID',
-    headerText: 'Customer ID',
+    headerText: 'UTP ID',
     width: '120',
     textAlign: 'Center',
     isPrimaryKey: true,
@@ -472,7 +471,7 @@ export const links = [
     links: [
       {
         name: 'Home',
-        icon: <FiShoppingBag />,
+        icon: <AiOutlineHome />,
       },
     ],
   },
@@ -489,7 +488,7 @@ export const links = [
       },
       {
         name: 'UTP Cases',
-        icon: <RiContactsLine />,
+        icon: <AiOutlineFileSearch />,
       },
     ],
   },
@@ -612,8 +611,8 @@ export const chatData = [
 export const earningData = [
   {
     icon: <MdOutlineSupervisorAccount />,
-    amount: '39,354',
-    percentage: '-4%',
+    amount: '3,27,165',
+    percentage: '+4%',
     title: 'UTP Cases',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
@@ -621,8 +620,8 @@ export const earningData = [
   },
   {
     icon: <BsBoxSeam />,
-    amount: '4,396',
-    percentage: '+23%',
+    amount: '1,68,627',
+    percentage: '-0.4%',
     title: 'Bail Granted',
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',

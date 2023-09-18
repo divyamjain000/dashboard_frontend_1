@@ -4,13 +4,29 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Home, Orders, Calendar, Lawyers, Stacked, Pyramid, UTPCases, Kanban, Line, Area, Bar, Pie, Financial, ColorMapping, Editor } from './pages';
+import {
+  Home,
+  Orders,
+  Calendar,
+  Lawyers,
+  UTPCases,
+  Kanban,
+} from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
+import Login from './components/Login';
 
 const App = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const {
+    setCurrentColor,
+    setCurrentMode,
+    currentMode,
+    activeMenu,
+    currentColor,
+    themeSettings,
+    setThemeSettings,
+  } = useStateContext();
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
@@ -26,19 +42,15 @@ const App = () => {
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
-            <TooltipComponent
-              content="Settings"
-              position="Top"
-            >
-              <button
+            <TooltipComponent content="Settings" position="Top">
+              {/* <button
                 type="button"
                 onClick={() => setThemeSettings(true)}
                 style={{ background: currentColor, borderRadius: '50%' }}
                 className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
               >
                 <FiSettings />
-              </button>
-
+              </button> */}
             </TooltipComponent>
           </div>
           {activeMenu ? (
@@ -61,12 +73,15 @@ const App = () => {
               <Navbar />
             </div>
             <div>
-              {themeSettings && (<ThemeSettings />)}
+              {/* {themeSettings && <ThemeSettings />} */}
 
               <Routes>
+                {/* Login */}
+                <Route path="/login" element={<Login />} />
+
                 {/* dashboard  */}
-                <Route path="/" element={(<Home />)} />
-                <Route path="/home" element={(<Home />)} />
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
 
                 {/* pages  */}
                 <Route path="/orders" element={<Orders />} />
@@ -76,7 +91,6 @@ const App = () => {
                 {/* apps  */}
                 <Route path="/To-do%20List" element={<Kanban />} />
                 <Route path="/calendar" element={<Calendar />} />
-
               </Routes>
             </div>
             <Footer />

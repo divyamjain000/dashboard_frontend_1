@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { SiShopware } from 'react-icons/si';
+// import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import Logo from '../data/logo.jpg';
 
 import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
@@ -24,8 +25,12 @@ const Sidebar = () => {
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
-            <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-              <SiShopware /> <span>Nyay Sanwad</span>
+            <Link
+              to="/"
+              onClick={handleCloseSideBar}
+              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+            >
+              <img src={Logo} height={50} width={70} /> <span>Nyay Sanvad</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
@@ -52,7 +57,7 @@ const Sidebar = () => {
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : '',
                     })}
-                    className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                    className={({ isActive }) => isActive ? activeLink : normalLink}  // eslint-disable-line
                   >
                     {link.icon}
                     <span className="capitalize ">{link.name}</span>

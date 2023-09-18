@@ -25,8 +25,12 @@ const Sidebar = () => {
       {activeMenu && (
         <>
           <div className="flex justify-between items-center">
-            <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-            <img src={Logo} height={50} width={70} /> <span>Nyay Sanvad</span>
+            <Link
+              to="/"
+              onClick={handleCloseSideBar}
+              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+            >
+              <img src={Logo} height={50} width={70} /> <span>Nyay Sanvad</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
@@ -53,7 +57,7 @@ const Sidebar = () => {
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : '',
                     })}
-                    className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                    className={({ isActive }) => isActive ? activeLink : normalLink}  // eslint-disable-line
                   >
                     {link.icon}
                     <span className="capitalize ">{link.name}</span>
